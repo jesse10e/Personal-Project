@@ -1,24 +1,30 @@
-angular.module("app", ['ui.router'])
+angular.module('app', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider){
   $stateProvider
 
-.state('home',{
-  url:'/home',
-  templateUrl:'pages/home/home.html',
-  controller:'homeController',
+.state('boosted',{
+  url:'/boosted',
+  templateUrl:'./views/boosted/boosted.html',
+  controller:'boostedController'
 })
 
-.state('features',{
-  url:'/features',
-  templateUrl:'pages/features/features.html',
-  controller:'featuresController',
+.state('board',{
+  url:'/board',
+  templateUrl:'./views/board/board.html',
+  controller:'boardController',
 })
 
-.state('coverage',{
-  url:'/coverage',
-  templateUrl:'pages/coverage/coverage.html',
-  controller:'coverageController',
+.state('acessories',{
+  url:'/acessories',
+  templateUrl:'./views/acessories/acessories.html',
+  controller:'acessoriesController',
+})
+.state('details',{
+  url:'/details/:id',
+  templateUrl:'./views/acessories/details/details.html',
+  controller:'detailsController',
 })
 
-$urlRouterProvider.otherwise('/home');
+$urlRouterProvider.otherwise('/boosted');
+
 });

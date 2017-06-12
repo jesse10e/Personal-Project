@@ -7,8 +7,15 @@ var paths = {
  jsSource:['./public/**/*.js'],
  cssSource: ['./public/**/*.scss'],
  viewsSource: ['./public/**/*.html'],
- imgSource:['./public/img/*.*']
+ imgSource:['./public/img/*.*'],
+ server: ['./server/index.js']
 };
+
+gulp.task('serve', function(){
+  nodemon({
+    'script': paths.server
+  })
+})
 
 gulp.task('js', function(){
   gulp.src(paths.jsSource)
